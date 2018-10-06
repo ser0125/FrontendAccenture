@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <form class="form">       
+    <h2 class="form-heading">BancAngular <i class="fas fa-piggy-bank"></i></h2>
+    <input type="number" class="form-control" name="identificacion" placeholder="Identificación" required autofocus />  
+    <input type="text" class="form-control" name="nombre" placeholder="Nombres" required autofocus />  
+    <input type="text" class="form-control" name="apellido" placeholder="Apellidos" required autofocus />  
+    <input type="date" class="form-control" name="fechaNacimiento" required autofocus /> 
+    <div class="form-row">
+      <button class="btn btn-lg btn-primary btn-row" type="submit">Confirmar</button>   
+      <button class="btn btn-lg btn-primary btn-row" (click)="goBack()" type="button">Cancelar</button>   
+    </div>
+ 
+  </form>
+</div>
