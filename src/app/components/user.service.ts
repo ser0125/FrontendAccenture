@@ -12,4 +12,7 @@ export class UserService {
    registerUser(user: User) {
     return  this.http.post(this.userUrl, user);
   }
+  checkUser(identification: number) {
+    return this.http.get(this.userUrl + '/' + identification);
+  }
 }
