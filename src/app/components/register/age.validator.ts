@@ -6,9 +6,11 @@ export function ValidateAge(control: AbstractControl) {
     let diff_in_year;
     if ((control.value !== undefined && control.value !== '' && control.value != null)) {
         diff_in_year = ((new Date(todayDate).getTime() - new Date(control.value).getTime()) / year_as_milliseconds);
-        if (diff_in_year >= 18) {
+        if (diff_in_year > 120) {
+            return  { olderAge: true };
+        } else if (diff_in_year >= 18) {
         return null;
         }
     }
-    return  { validAge: true };
+    return  { youngerAge: true };
     }

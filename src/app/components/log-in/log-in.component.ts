@@ -17,9 +17,8 @@ export class LogInComponent implements OnInit {
     this.initForm();
   }
   initForm() {
-    let identification;
     this.formSignIn = new FormGroup({
-      'identification': new FormControl(identification)
+      'identification': new FormControl()
     });
   }
 
@@ -40,5 +39,6 @@ export class LogInComponent implements OnInit {
       );
     }
   }
-
+  // convenience getter for easy access to form fields
+  get form() { return this.formSignIn.controls; }
 }

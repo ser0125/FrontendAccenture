@@ -11,7 +11,7 @@ import { ValidateAge } from './age.validator';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit, DoCheck {
+export class RegisterComponent implements OnInit {
   formRegister: FormGroup;
   constructor(private router: Router, private userService: UserService) { }
 
@@ -19,20 +19,13 @@ export class RegisterComponent implements OnInit, DoCheck {
     this.initForm();
   }
   initForm() {
-    let identification;
-    let name;
-    let lastName;
-    let birthDate;
 
     this.formRegister = new FormGroup({
-      'identification': new FormControl(identification , [ Validators.required, Validators.min(10000000)]),
-      'name': new FormControl(name, Validators.required),
-      'lastName': new FormControl(lastName, Validators.required),
-      'birthDate': new FormControl(birthDate, [Validators.required, ValidateAge])
+      'identification': new FormControl('' , [ Validators.required, Validators.min(10000000)]),
+      'name': new FormControl('', Validators.required),
+      'lastName': new FormControl('', Validators.required),
+      'birthDate': new FormControl('', [Validators.required, ValidateAge])
     });
-  }
-  ngDoCheck() {
-    //console.log(this.formRegister.controls.birthDate.errors.validAge);
   }
   goBack() {
     this.router.navigate(['/']);

@@ -32,7 +32,8 @@
       <div *ngIf="form.birthDate.errors &&
       form.birthDate.touched" class="error">
         <div *ngIf="form.birthDate.errors.required">La fecha de nacimiento es obligatoria</div>
-        <div *ngIf="form.birthDate.errors.validAge">La edad debe ser mayor de 18 años</div>
+        <div *ngIf="form.birthDate.errors.youngerAge">La edad debe ser mayor de 18 años</div>
+        <div *ngIf="form.birthDate.errors.olderAge">La edad debe ser menor de 120 años</div>
       </div>
       <div class="form-row">
         <button class="btn btn-lg btn-primary btn-row" type="submit">Confirmar</button>
