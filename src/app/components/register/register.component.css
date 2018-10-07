@@ -26,3 +26,11 @@
   .btn-row {
       margin: auto;
   }
+  .errmsg{
+    border: 1px solid red;
+  }
+  .error {
+    color: indianred;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
