@@ -1,8 +1,9 @@
 import { UserService } from './../user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
+import { ValidateAge } from './age.validator';
 
 
 @Component({
@@ -10,7 +11,7 @@ import swal from 'sweetalert2';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, DoCheck {
   formRegister: FormGroup;
   constructor(private router: Router, private userService: UserService) { }
 
@@ -27,8 +28,11 @@ export class RegisterComponent implements OnInit {
       'identification': new FormControl(identification , [ Validators.required, Validators.min(10000000)]),
       'name': new FormControl(name, Validators.required),
       'lastName': new FormControl(lastName, Validators.required),
-      'birthDate': new FormControl(birthDate, Validators.required)
+      'birthDate': new FormControl(birthDate, [Validators.required, ValidateAge])
     });
+  }
+  ngDoCheck() {
+    //console.log(this.formRegister.controls.birthDate.errors.validAge);
   }
   goBack() {
     this.router.navigate(['/']);
