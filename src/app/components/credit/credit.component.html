@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="formCredit" (ngSubmit)="submitForm()">
+    <h2 class="form-heading">Solicitud credito</h2>
+
+    <input type="text" class="form-control" formControlName="company" name="empresa" placeholder="Compañia" autofocus
+      [ngClass]="{errmsg: (form.company.errors &&
+        form.company.touched)}" />
+    <div *ngIf="form.company.errors &&
+        form.company.touched" class="error">
+      <div *ngIf="form.company.errors.required">El nombre de la empresa es obligatorio</div>
+    </div>
+    <input type="number" class="form-control" formControlName="nit" name="nit" placeholder="Nit" autofocus [ngClass]="{errmsg: (form.nit.errors &&
+      form.nit.touched)}" />
+  <div *ngIf="form.nit.errors &&
+      form.nit.touched" class="error">
+    <div *ngIf="form.nit.errors.required">El Nit es obligatorio</div>
+  </div>
+
+  <input type="number" class="form-control" formControlName="salary" name="salario" placeholder="Salario" autofocus
+    [ngClass]="{errmsg: (form.salary.errors &&
+      form.salary.touched)}" />
+  <div *ngIf="form.salary.errors &&
+      form.salary.touched" class="error">
+    <div *ngIf="form.salary.errors.required">El salario es obligatorio</div>
+    <div *ngIf="form.salary.errors.negativeSalary">El salario debe ser positivo</div>
+    <div *ngIf="form.salary.errors.notInteger">El salario debe ser entero</div>
+    <div *ngIf="form.salary.errors.lowSalary">El salario debe ser mayor a $100.000</div>
+  </div>
+  <div class="form-group">
+    <label>Fecha de ingreso a la empresa</label>
+    <input type="date" class="form-control" formControlName="startDate" name="fechaIngreso" autofocus [ngClass]="{errmsg: (form.startDate.errors &&
+      form.startDate.touched)}" />
+     <div *ngIf="form.startDate.errors &&
+      form.startDate.touched" class="error">
+    <div *ngIf="form.startDate.errors.required">La fecha de inicio es obligatoria</div>
+    <div *ngIf="form.startDate.errors.olderAge">No es posible que tenga más de 90 años laborando</div>
+  </div>
+  </div>
+   
+    <div class="form-row">
+      <button class="btn btn-lg btn-primary btn-row" type="submit">Confirmar</button>
+      <button class="btn btn-lg btn-primary btn-row" (click)="goBack()" type="button">Cancelar</button>
+    </div>
+
+  </form>
+</div>

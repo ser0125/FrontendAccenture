@@ -25,9 +25,9 @@ export class LogInComponent implements OnInit {
   submitForm() {
     if (this.formSignIn.valid) {
       this.userService.checkUser(this.formSignIn.controls.identification.value).subscribe(
-        (res: []) => {
+        (res: any) => {
           if (res.length) {
-           this.router.navigate(['/credit']);
+           this.router.navigate(['/credito']);
           } else {
             swal({
               type: 'error',

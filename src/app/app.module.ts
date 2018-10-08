@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './components/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { CreditComponent } from './components/credit/credit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreditComponent
   ],
   imports: [
     BrowserModule,
