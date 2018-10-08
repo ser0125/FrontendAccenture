@@ -1,27 +1,44 @@
-# AccentureFrontend
+# FrontendAccenture
+========================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This is a repository for a front test in Accenture
 
-## Development server
+## Steps to run the project
+#### Step 1. Configure the backend of the application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Before cloning this repository you are going to need the backend of the application, here is the link:
 
-## Code scaffolding
+* https://github.com/ser0125/BackendAccenture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Then install the Angular CLI globally with the console.
 
-## Build
+  ```
+npm install -g @angular/cli
+  ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Step 2. Clone the repository and install the dependecies
 
-## Running unit tests
+The next thing you need to do is to clone this repository with the console.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  ```
+git clone https://github.com/ser0125/FrontendAccenture
+  ```
 
-## Running end-to-end tests
+Then with the console go to the folder of the project and run the next command
+  ```
+npm install 
+  ```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Step 3. Serve the application
 
-## Further help
+Finally the last step is to launch the server with this command.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ ```
+ng serve --open
+  ```
+
+
+
+
+
+
